@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 
 class UnderButtonSentence extends StatelessWidget {
-  const UnderButtonSentence({super.key});
-
+  const UnderButtonSentence({super.key, this.onTap});
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
-        Text('Dont have an Account ?',),
-        SizedBox(width: 5,),
-        Text('Create One', style: TextStyle(
-         fontWeight: FontWeight.bold,
-        ),),
+        const Text('Dont have an Account ?',),
+        const SizedBox(width: 5,),
+        GestureDetector(
+          onTap: onTap,
+          child: const Text('Create One', style: TextStyle(
+           fontWeight: FontWeight.bold,
+          ),),
+        ),
       ],
     );
   }
