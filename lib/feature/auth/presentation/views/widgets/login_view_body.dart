@@ -1,3 +1,4 @@
+import 'package:e_commerce/feature/auth/presentation/views/create_account_view.dart';
 import 'package:e_commerce/feature/auth/presentation/views/login_view_password_section.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/continue_with_button.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_button.dart';
@@ -22,13 +23,21 @@ class LoginViewBody extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),),
             const SizedBox(height: 32,),
-            const CustomTextFormField(),
+            const CustomTextFormField(
+              hintText: 'Email Address',
+            ),
             const SizedBox(height: 16,),
-            const CustomButton(),
+            CustomButton(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const LoginViewPasswordSection()));
+              },
+            ),
             const SizedBox(height: 16,),
             UnderButtonSentence(
+              firstText: 'Dont have an Account ?',
+              secondText: 'Create One',
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginViewPasswordSection()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const CreateAccountView()));
               },
             ),
             const SizedBox(height: 72,),

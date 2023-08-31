@@ -2,8 +2,8 @@ import 'package:e_commerce/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
-
+  const CustomButton({super.key, this.onTap});
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,7 +14,7 @@ class CustomButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(100),
       ),
       child: TextButton(
-        onPressed: (){}, 
+        onPressed: onTap, 
         child: const Text('Continue', style: TextStyle(
           color: Colors.white,
           fontSize: 16,
