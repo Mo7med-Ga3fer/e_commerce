@@ -1,3 +1,4 @@
+import 'package:e_commerce/feature/auth/presentation/views/email_notify_view.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/arrow_back_icon.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_button.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_text_form_field.dart';
@@ -8,27 +9,31 @@ class ForgotPasswordViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 27),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 27),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 25,),
-            ArrowBackIcon(),
-            SizedBox(height: 20,),
-            Text('Forgot Password', style: TextStyle(
+            const SizedBox(height: 25,),
+            const ArrowBackIcon(),
+            const SizedBox(height: 20,),
+            const Text('Forgot Password', style: TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.w700,
             ),),
-            SizedBox(height: 35,),
-            CustomTextFormField(
+            const SizedBox(height: 35,),
+            const CustomTextFormField(
               hintText: 'Enter Email address',
             ),
-            SizedBox(height: 16,),
+            const SizedBox(height: 16,),
             Align(
               alignment: Alignment.center,
-              child: CustomButton()),
+              child: CustomButton(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const EmailNotifyView()));
+                },
+              )),
           ],
         ),
       ),

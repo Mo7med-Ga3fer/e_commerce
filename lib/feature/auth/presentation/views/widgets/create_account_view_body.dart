@@ -1,3 +1,4 @@
+import 'package:e_commerce/feature/auth/presentation/views/on_boarding_view.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/arrow_back_icon.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_button.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_text_form_field.dart';
@@ -8,31 +9,35 @@ class CreateAccountViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 27),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 27),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 25,),
-            ArrowBackIcon(),
-            SizedBox(height: 20,),
-            Text('Create Account', style: TextStyle(
+            const SizedBox(height: 25,),
+            const ArrowBackIcon(),
+            const SizedBox(height: 20,),
+            const Text('Create Account', style: TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.w700,
             ),),
-            SizedBox(height: 32,),
-            CustomTextFormField(hintText: 'Firstname'),
-            SizedBox(height: 16,),
-            CustomTextFormField(hintText: 'Lastname'),
-            SizedBox(height: 16,),
-            CustomTextFormField(hintText: 'Email Address'),
-            SizedBox(height: 16,),
-            CustomTextFormField(hintText: 'Password'),
-            SizedBox(height: 40,),
+            const SizedBox(height: 32,),
+            const CustomTextFormField(hintText: 'Firstname'),
+            const SizedBox(height: 16,),
+            const CustomTextFormField(hintText: 'Lastname'),
+            const SizedBox(height: 16,),
+            const CustomTextFormField(hintText: 'Email Address'),
+            const SizedBox(height: 16,),
+            const CustomTextFormField(hintText: 'Password'),
+            const SizedBox(height: 40,),
             Align(
               alignment: Alignment.center,
-              child: CustomButton()),
+              child: CustomButton(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const OnBoardingView()));
+                },
+              )),
           ],
         ),
       ),
