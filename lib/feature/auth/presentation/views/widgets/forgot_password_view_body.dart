@@ -3,8 +3,8 @@ import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_button
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
-class CreateAccountViewBody extends StatelessWidget {
-  const CreateAccountViewBody({super.key});
+class ForgotPasswordViewBody extends StatelessWidget {
+  const ForgotPasswordViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,25 +17,21 @@ class CreateAccountViewBody extends StatelessWidget {
             SizedBox(height: 25,),
             ArrowBackIcon(),
             SizedBox(height: 20,),
-            Text('Create Account', style: TextStyle(
+            Text('Forgot Password', style: TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.w700,
             ),),
-            SizedBox(height: 32,),
-            CustomTextFormField(hintText: 'Firstname'),
+            SizedBox(height: 35,),
+            CustomTextFormField(
+              hintText: 'Enter Email address',
+            ),
             SizedBox(height: 16,),
-            CustomTextFormField(hintText: 'Lastname'),
-            SizedBox(height: 16,),
-            CustomTextFormField(hintText: 'Email Address'),
-            SizedBox(height: 16,),
-            CustomTextFormField(hintText: 'Password'),
-            SizedBox(height: 40,),
             Align(
               alignment: Alignment.center,
               child: CustomButton()),
           ],
         ),
       ),
-    );
+      );
   }
 }

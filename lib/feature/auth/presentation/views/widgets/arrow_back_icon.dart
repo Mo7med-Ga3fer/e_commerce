@@ -15,7 +15,7 @@ class ArrowBackIcon extends StatelessWidget {
         onPressed: (){
           Navigator.pop(context);
         },
-        icon: Image.asset('assets/images/arrow.png'),
+        icon: Image.asset('assets/images/arrow.png',),
         ),
     );
   }

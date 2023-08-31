@@ -1,3 +1,4 @@
+import 'package:e_commerce/feature/auth/presentation/views/forgot_password_view.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_button.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_text_form_field.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/underbutton_sentence.dart';
@@ -29,7 +30,9 @@ class LoginViewPasswordSectionBody extends StatelessWidget {
             UnderButtonSentence(
               firstText: 'Forgot Password ?',
               secondText: 'Reset',
-              onTap: (){},
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const ForgotPasswordView()));
+              },
             ),
           ],
         ),
