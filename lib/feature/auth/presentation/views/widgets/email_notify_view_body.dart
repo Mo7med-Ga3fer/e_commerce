@@ -1,6 +1,7 @@
-import 'package:e_commerce/feature/auth/presentation/views/login_view.dart';
+import 'package:e_commerce/core/utils/app_router.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class EmailNotifyViewBody extends StatelessWidget {
   const EmailNotifyViewBody({super.key});
@@ -26,7 +27,7 @@ class EmailNotifyViewBody extends StatelessWidget {
               txt: 'Return to Login',
               width: 160,
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const LoginView()));
+                GoRouter.of(context).pushReplacement('/${AppRouter.kEmailLoginView}');
               },
             ),
           ],

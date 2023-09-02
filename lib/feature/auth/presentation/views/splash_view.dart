@@ -1,6 +1,7 @@
+import 'package:e_commerce/core/utils/app_router.dart';
 import 'package:e_commerce/core/utils/constants.dart';
-import 'package:e_commerce/feature/auth/presentation/views/login_view.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -31,8 +32,7 @@ class _SplashViewState extends State<SplashView> {
   }
   Future<void> Navigate() async {
     Future.delayed(const Duration(milliseconds: 4500), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const LoginView()));
+     GoRouter.of(context).go('/${AppRouter.kEmailLoginView}');
     });
   }
   }

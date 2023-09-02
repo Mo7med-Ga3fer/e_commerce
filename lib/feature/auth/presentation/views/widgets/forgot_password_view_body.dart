@@ -1,12 +1,20 @@
-import 'package:e_commerce/feature/auth/presentation/views/email_notify_view.dart';
+import 'package:e_commerce/core/utils/app_router.dart';
+import 'package:e_commerce/feature/auth/data/manager/firebase_auth.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/arrow_back_icon.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_button.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class ForgotPasswordViewBody extends StatelessWidget {
+class ForgotPasswordViewBody extends StatefulWidget {
   const ForgotPasswordViewBody({super.key});
 
+  @override
+  State<ForgotPasswordViewBody> createState() => _ForgotPasswordViewBodyState();
+}
+
+class _ForgotPasswordViewBodyState extends State<ForgotPasswordViewBody> {
+  TextEditingController email = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,15 +31,17 @@ class ForgotPasswordViewBody extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),),
             const SizedBox(height: 35,),
-            const CustomTextFormField(
+            CustomTextFormField(
               hintText: 'Enter Email address',
+              controller: email,
             ),
             const SizedBox(height: 16,),
             Align(
               alignment: Alignment.center,
               child: CustomButton(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const EmailNotifyView()));
+                onTap: ()async{
+                  await Authentication.passwordReset(email.text);
+                  GoRouter.of(context).pushReplacement('/${AppRouter.kEmailNotifyView}');
                 },
               )),
           ],

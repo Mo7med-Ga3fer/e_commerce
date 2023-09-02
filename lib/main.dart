@@ -1,4 +1,4 @@
-import 'package:e_commerce/feature/auth/presentation/views/splash_view.dart';
+import 'package:e_commerce/core/utils/app_router.dart';
 import 'package:e_commerce/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -20,12 +20,12 @@ class Ecommerce extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'GTWalsheimPro',
       ),
-      home: const SplashView(),
     );
 }
 }

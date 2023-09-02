@@ -1,13 +1,21 @@
-import 'package:e_commerce/feature/auth/presentation/views/create_account_view.dart';
-import 'package:e_commerce/feature/auth/presentation/views/login_view_password_section.dart';
+import 'package:e_commerce/core/utils/app_router.dart';
+import 'package:e_commerce/feature/auth/data/manager/firebase_auth.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/continue_with_button.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_button.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_text_form_field.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/underbutton_sentence.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class LoginViewBody extends StatelessWidget {
+class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
+
+  @override
+  State<LoginViewBody> createState() => _LoginViewBodyState();
+}
+
+class _LoginViewBodyState extends State<LoginViewBody> {
+  TextEditingController email = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +31,14 @@ class LoginViewBody extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),),
             const SizedBox(height: 32,),
-            const CustomTextFormField(
+            CustomTextFormField(
               hintText: 'Email Address',
+              controller: email,
             ),
             const SizedBox(height: 16,),
             CustomButton(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const LoginViewPasswordSection()));
+                GoRouter.of(context).go('/${AppRouter.kPasswordLoginView}', extra: email.text);
               },
             ),
             const SizedBox(height: 16,),
@@ -37,24 +46,25 @@ class LoginViewBody extends StatelessWidget {
               firstText: 'Dont have an Account ?',
               secondText: 'Create One',
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const CreateAccountView()));
+               GoRouter.of(context).push('/${AppRouter.kRegisterView}');
               },
             ),
             const SizedBox(height: 72,),
-            const ContinueWithButton(
-              txt: 'Apple',
-              img: 'assets/images/apple.png',
-            ),
-            const SizedBox(height: 12,),
-            const ContinueWithButton(
+            ContinueWithButton(
               txt: 'Google',
               img: 'assets/images/google.png',
+              onTap: ()async{
+                await Authentication.signInWithGoogle();
+              },
             ),
             const SizedBox(height: 12,),
             const ContinueWithButton(
               txt: 'Facebook',
-              img: 'assets/images/facebook.png',
-            ),
+              img: 'assets/images/facebook.png',),
+            const SizedBox(height: 12,),
+            const ContinueWithButton(
+              txt: 'Facebook',
+              img: 'assets/images/apple.png',),
           ],
         ),
       ),

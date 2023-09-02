@@ -2,13 +2,15 @@ import 'package:e_commerce/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({super.key, required this.hintText});
+  const CustomTextFormField({super.key, required this.hintText, this.controller});
   final String hintText;
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(5),
       child: TextFormField(
+        controller: controller,
         keyboardType: TextInputType.emailAddress,
         cursorHeight: 20,
         cursorColor: kPrimaryColor,
