@@ -31,8 +31,8 @@ class _SplashViewState extends State<SplashView> {
     );
   }
   Future<void> Navigate() async {
-    Future.delayed(const Duration(milliseconds: 4500), () {
-     GoRouter.of(context).go('/${AppRouter.kEmailLoginView}');
+    Future.delayed(const Duration(milliseconds: 3500), () {
+     GoRouter.of(context).pushReplacement('/${AppRouter.kLoginView}');
     });
   }
   }

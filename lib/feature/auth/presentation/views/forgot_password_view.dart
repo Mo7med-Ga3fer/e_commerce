@@ -7,7 +7,7 @@ class ForgotPasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(child: ForgotPasswordViewBody()),
+      body: ForgotPasswordViewBody(),
     );
   }
 }

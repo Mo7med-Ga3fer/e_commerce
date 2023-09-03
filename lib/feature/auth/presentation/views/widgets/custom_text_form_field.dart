@@ -8,7 +8,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(8),
       child: TextFormField(
         controller: controller,
         keyboardType: TextInputType.emailAddress,
@@ -16,18 +16,18 @@ class CustomTextFormField extends StatelessWidget {
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
           hintText: hintText,
-          contentPadding: const EdgeInsets.all(25),
+          contentPadding: const EdgeInsets.all(22),
           fillColor: const Color(0xFFF4F4F4),
           filled: true,
           focusColor: const Color(0xFFF4F4F4),
           border: InputBorder.none,
           focusedBorder: OutlineInputBorder(
             borderSide: const BorderSide(color: kPrimaryColor),
-            borderRadius: BorderRadius.circular(5.0),
+            borderRadius: BorderRadius.circular(8.0),
           ),
           errorBorder: OutlineInputBorder(
             borderSide: const BorderSide(color: Colors.red),
-            borderRadius: BorderRadius.circular(5.0),
+            borderRadius: BorderRadius.circular(8.0),
           )
         ),
       ),

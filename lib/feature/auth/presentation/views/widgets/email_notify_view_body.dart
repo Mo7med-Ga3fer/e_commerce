@@ -27,7 +27,7 @@ class EmailNotifyViewBody extends StatelessWidget {
               txt: 'Return to Login',
               width: 160,
               onTap: (){
-                GoRouter.of(context).pushReplacement('/${AppRouter.kEmailLoginView}');
+                GoRouter.of(context).pushReplacement('/${AppRouter.kLoginView}');
               },
             ),
           ],

@@ -1,7 +1,4 @@
 import 'package:e_commerce/core/utils/app_router.dart';
-import 'package:e_commerce/feature/home/presentation/views/category_result_view.dart';
-import 'package:e_commerce/feature/home/presentation/views/home_view.dart';
-import 'package:e_commerce/feature/home/presentation/views/shop_by_category_view.dart';
 import 'package:e_commerce/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -23,9 +20,8 @@ class Ecommerce extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      //routerConfig: AppRouter.router,
-      home: const HomeView(),
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'GTWalsheimPro',
