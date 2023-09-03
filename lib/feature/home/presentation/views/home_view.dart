@@ -1,3 +1,5 @@
+import 'package:e_commerce/core/utils/constants.dart';
+import 'package:e_commerce/feature/home/presentation/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -5,8 +7,8 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Home'),),
+    return const Scaffold(
+      body: SafeArea(child: HomeViewBody()),
     );
   }
 }

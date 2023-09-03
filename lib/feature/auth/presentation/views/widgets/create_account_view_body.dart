@@ -1,6 +1,6 @@
 import 'package:e_commerce/core/utils/app_router.dart';
 import 'package:e_commerce/feature/auth/data/manager/firebase_auth.dart';
-import 'package:e_commerce/feature/auth/presentation/views/widgets/arrow_back_icon.dart';
+import 'package:e_commerce/core/widgets/arrow_back_icon.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_button.dart';
 import 'package:e_commerce/feature/auth/presentation/views/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class _CreateAccountViewBodyState extends State<CreateAccountViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 27),
+      padding: const EdgeInsets.symmetric(horizontal: 25),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
