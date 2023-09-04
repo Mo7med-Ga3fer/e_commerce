@@ -24,12 +24,21 @@ class HomeAppBar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Men', style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w700,
-                ),),
-                SizedBox(width: 4,),
-                Image.asset('assets/images/arrowdown.png', width: 16, height: 16,),
+                Text(
+                  'Men',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                SizedBox(
+                  width: 4,
+                ),
+                Image.asset(
+                  'assets/images/arrowdown.png',
+                  width: 16,
+                  height: 16,
+                ),
               ],
             ),
           ),

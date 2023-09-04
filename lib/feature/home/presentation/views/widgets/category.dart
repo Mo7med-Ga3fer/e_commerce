@@ -26,11 +26,16 @@ class Category extends StatelessWidget {
                 backgroundImage: AssetImage(img),
               ),
             ),
-            const SizedBox(width: 16,),
-            Text(txt, style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-            ),)
+            const SizedBox(
+              width: 16,
+            ),
+            Text(
+              txt,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
+            )
           ],
         ),
       ),

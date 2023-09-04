@@ -2,7 +2,13 @@ import 'package:e_commerce/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, this.onTap, this.width = 350, this.txt = 'Continue', this.color = kPrimaryColor, this.txtColor = Colors.white});
+  const CustomButton(
+      {super.key,
+      this.onTap,
+      this.width = 350,
+      this.txt = 'Continue',
+      this.color = kPrimaryColor,
+      this.txtColor = Colors.white});
   final void Function()? onTap;
   final double width;
   final String txt;
@@ -18,13 +24,16 @@ class CustomButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(100),
       ),
       child: TextButton(
-        onPressed: onTap, 
-        child: Text(txt, style: TextStyle(
-          color: txtColor,
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-        ),),
+        onPressed: onTap,
+        child: Text(
+          txt,
+          style: TextStyle(
+            color: txtColor,
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+          ),
         ),
+      ),
     );
   }
 }

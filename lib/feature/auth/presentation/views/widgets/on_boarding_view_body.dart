@@ -20,12 +20,12 @@ class OnBoardingViewBody extends StatelessWidget {
           color: const Color(0xffF4F4F4),
           child: Center(
               child: CustomButton(
-                txt: 'Finish',
-                onTap: (){
-                GoRouter.of(context).pushReplacement('/${AppRouter.kHomeView}');
-                },
+            txt: 'Finish',
+            onTap: () {
+              GoRouter.of(context).pushReplacement('/${AppRouter.kHomeView}');
+            },
           )),
-        ), 
+        ),
       ],
     );
   }

@@ -14,22 +14,21 @@ class CustomSearch extends StatelessWidget {
         cursorHeight: 20,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
-          hintText: 'Search',
-          prefixIcon: Image.asset('assets/images/search.jpg'),
-          contentPadding: const EdgeInsets.all(15),
-          fillColor: const Color(0xFFF4F4F4),
-          filled: true,
-          focusColor: const Color(0xFFF4F4F4),
-          border: InputBorder.none,
-          focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: kPrimaryColor),
-            borderRadius: BorderRadius.circular(100),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.red),
-            borderRadius: BorderRadius.circular(100),
-          )
-        ),
+            hintText: 'Search',
+            prefixIcon: Image.asset('assets/images/search.jpg'),
+            contentPadding: const EdgeInsets.all(15),
+            fillColor: const Color(0xFFF4F4F4),
+            filled: true,
+            focusColor: const Color(0xFFF4F4F4),
+            border: InputBorder.none,
+            focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: kPrimaryColor),
+              borderRadius: BorderRadius.circular(100),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.red),
+              borderRadius: BorderRadius.circular(100),
+            )),
       ),
     );
   }

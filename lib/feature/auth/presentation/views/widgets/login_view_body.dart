@@ -27,7 +27,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
       inAsyncCall: isLoading,
       opacity: 0.08,
       color: kPrimaryColor,
-      progressIndicator: const CircularProgressIndicator(color: kPrimaryColor,),
+      progressIndicator: const CircularProgressIndicator(
+        color: kPrimaryColor,
+      ),
       child: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 27),
@@ -35,44 +37,72 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const SizedBox(height: 70,),
-                const Text('Sign in', style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w700,
-                ),),
-                const SizedBox(height: 32,),
+                const SizedBox(
+                  height: 70,
+                ),
+                const Text(
+                  'Sign in',
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(
+                  height: 32,
+                ),
                 CustomTextFormField(
                   hintText: 'Email Address',
                   controller: email,
                 ),
-                const SizedBox(height: 16,),
+                const SizedBox(
+                  height: 16,
+                ),
                 CustomTextFormField(
                   hintText: 'Password',
                   controller: password,
                 ),
-                const SizedBox(height: 16,),
+                const SizedBox(
+                  height: 16,
+                ),
                 CustomButton(
                   onTap: () async {
+                    setState(() {
+                      isLoading = true;
+                    });
                     await Authentication.signIn(email.text, password.text);
+                    GoRouter.of(context)
+                        .pushReplacement('/${AppRouter.kHomeView}');
+                    setState(() {
+                      isLoading = false;
+                    });
                   },
                 ),
-                const SizedBox(height: 16,),
+                const SizedBox(
+                  height: 16,
+                ),
                 UnderButtonSentence(
                   firstText: 'Forgot Password ?',
                   secondText: 'Reset',
-                  onTap: (){
-                    GoRouter.of(context).pushReplacement('/${AppRouter.kForgotPasswordView}');
+                  onTap: () {
+                    GoRouter.of(context)
+                        .pushReplacement('/${AppRouter.kForgotPasswordView}');
                   },
                 ),
                 /**/
-                const SizedBox(height: 60,),
-                const Text('-OR-', style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
+                const SizedBox(
+                  height: 60,
                 ),
-                textAlign: TextAlign.center,
+                const Text(
+                  '-OR-',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 16,),
+                const SizedBox(
+                  height: 16,
+                ),
                 ContinueWithButton(
                   txt: 'Google',
                   img: 'assets/images/google.png',
@@ -84,16 +114,20 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     setState(() {
                       isLoading = false;
                     });
-                     GoRouter.of(context).pushReplacement('/${AppRouter.kHomeView}');
+                    GoRouter.of(context)
+                        .pushReplacement('/${AppRouter.kHomeView}');
                   },
                 ),
-                const SizedBox(height: 70,),
+                const SizedBox(
+                  height: 70,
+                ),
                 UnderButtonSentence(
                   firstText: 'Dont have an Account ?',
                   secondText: 'Create One',
                   isCenter: true,
                   onTap: () {
-                   GoRouter.of(context).pushReplacement('/${AppRouter.kRegisterView}');
+                    GoRouter.of(context)
+                        .pushReplacement('/${AppRouter.kRegisterView}');
                   },
                 ),
               ],

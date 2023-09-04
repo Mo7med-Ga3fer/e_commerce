@@ -12,15 +12,24 @@ class CategoryResultViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           ArrowBackIcon(),
-          SizedBox(height: 16,),
-          Text('Hoodies (240)', style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
-          ),),
-          SizedBox(height: 25,),
-          Expanded(child: CustomGridView()),
+          SizedBox(
+            height: 16,
+          ),
+          Text(
+            'Hoodies (240)',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          //Expanded(child: CustomGridView()),
         ],
       ),
     );

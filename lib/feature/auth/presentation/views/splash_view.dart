@@ -11,29 +11,32 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
-  
   @override
   void initState() {
     super.initState();
     Navigate();
   }
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: kPrimaryColor,
       body: Center(
-        child: Text('Clot', style: TextStyle(
-          fontSize: 64,
-          color: Colors.white,
-          fontWeight: FontWeight.w700,
-        ),),
+        child: Text(
+          'Clot',
+          style: TextStyle(
+            fontSize: 64,
+            color: Colors.white,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
       ),
     );
   }
+
   Future<void> Navigate() async {
     Future.delayed(const Duration(milliseconds: 3500), () {
-     GoRouter.of(context).pushReplacement('/${AppRouter.kLoginView}');
+      GoRouter.of(context).pushReplacement('/${AppRouter.kLoginView}');
     });
   }
-  }
-
+}

@@ -1,9 +1,10 @@
 import 'package:e_commerce/core/utils/constants.dart';
+import 'package:e_commerce/feature/home/data/models/product_model/product_model.dart';
 import 'package:flutter/material.dart';
 
 class SellingItem extends StatelessWidget {
-  const SellingItem({super.key});
-
+  const SellingItem({super.key, required this.product});
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,18 +21,38 @@ class SellingItem extends StatelessWidget {
             ),
             width: 159,
             height: 220,
-            child: Image.asset('assets/images/sample.png', fit: BoxFit.fill,),
+            child: Image.network(
+              product.image!,
+              fit: BoxFit.fill,
+            ),
           ),
-          const SizedBox(height: 8,),
-          const Text("Men's Harrington Jacket", style: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w400,
-          ),),
-          const SizedBox(height: 8,),
-          const Text(r"$148.00", style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w700,
-          ),),
+          const SizedBox(
+            height: 8,
+          ),
+          Container(
+            constraints: const BoxConstraints(
+              maxWidth: 159
+            ),
+            child: Text(
+              product.title!,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+              ),
+              overflow: TextOverflow.clip,
+              maxLines: 1,
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Text(
+            r"$ "+product.price.toString(),
+            style: const TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
         ],
       ),
     );

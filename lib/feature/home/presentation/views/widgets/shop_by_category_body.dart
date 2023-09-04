@@ -12,31 +12,40 @@ class ShopByCategoryViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           ArrowBackIcon(),
-          SizedBox(height: 28,),
-          Text('Shop by Categories', style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w700,
-          ),),
-          SizedBox(height: 16,),
+          SizedBox(
+            height: 28,
+          ),
+          Text(
+            'Shop by Categories',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          SizedBox(
+            height: 16,
+          ),
           Category(
             txt: 'Hoodies',
             img: 'assets/images/hoodies.png',
           ),
-           Category(
+          Category(
             txt: 'Accessories',
             img: 'assets/images/accessories.png',
           ),
-           Category(
+          Category(
             txt: 'Shorts',
             img: 'assets/images/shorts.png',
           ),
-           Category(
+          Category(
             txt: 'Shoes',
             img: 'assets/images/shoes.png',
           ),
-           Category(
+          Category(
             txt: 'Bags',
             img: 'assets/images/bags.png',
           ),

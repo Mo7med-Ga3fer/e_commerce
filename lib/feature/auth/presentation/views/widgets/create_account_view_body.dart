@@ -27,7 +27,9 @@ class _CreateAccountViewBodyState extends State<CreateAccountViewBody> {
       inAsyncCall: isLoading,
       opacity: 0.08,
       color: kPrimaryColor,
-      progressIndicator: const CircularProgressIndicator(color: kPrimaryColor,),
+      progressIndicator: const CircularProgressIndicator(
+        color: kPrimaryColor,
+      ),
       child: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -35,48 +37,67 @@ class _CreateAccountViewBodyState extends State<CreateAccountViewBody> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 25,),
+                const SizedBox(
+                  height: 25,
+                ),
                 const ArrowBackIcon(),
-                const SizedBox(height: 20,),
-                const Text('Create Account', style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w700,
-                ),),
-                const SizedBox(height: 32,),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  'Create Account',
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(
+                  height: 32,
+                ),
                 CustomTextFormField(
                   hintText: 'Firstname',
                   controller: firstname,
-                  ),
-                const SizedBox(height: 16,),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
                 CustomTextFormField(
                   hintText: 'Lastname',
                   controller: lastname,
-                  ),
-                const SizedBox(height: 16,),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
                 CustomTextFormField(
                   hintText: 'Email Address',
                   controller: email,
-                  ),
-                const SizedBox(height: 16,),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
                 CustomTextFormField(
                   hintText: 'Password',
                   controller: password,
-                  ),
-                const SizedBox(height: 40,),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
                 Align(
-                  alignment: Alignment.center,
-                  child: CustomButton(
-                    onTap: ()async{
-                      setState(() {
-                        isLoading = true;
-                      });
-                      await Authentication.createAccount(email.text, password.text);
-                      setState(() {
-                        isLoading = true;
-                      });
-                      GoRouter.of(context).pushReplacement('/${AppRouter.kOnBoardingView}');
-                    },
-                  )),
+                    alignment: Alignment.center,
+                    child: CustomButton(
+                      onTap: () async {
+                        setState(() {
+                          isLoading = true;
+                        });
+                        await Authentication.createAccount(
+                            email.text, password.text);
+                        setState(() {
+                          isLoading = true;
+                        });
+                        GoRouter.of(context)
+                            .pushReplacement('/${AppRouter.kOnBoardingView}');
+                      },
+                    )),
               ],
             ),
           ),

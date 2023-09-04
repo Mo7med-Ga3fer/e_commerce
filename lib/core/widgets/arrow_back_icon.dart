@@ -12,13 +12,15 @@ class ArrowBackIcon extends StatelessWidget {
         decoration: BoxDecoration(
           color: const Color(0xFFF4F4F4),
           borderRadius: BorderRadius.circular(100),
-          ),
+        ),
         child: IconButton(
-          onPressed: (){
+          onPressed: () {
             Navigator.pop(context);
           },
-          icon: Image.asset('assets/images/arrow.png',),
+          icon: Image.asset(
+            'assets/images/arrow.png',
           ),
+        ),
       ),
     );
   }

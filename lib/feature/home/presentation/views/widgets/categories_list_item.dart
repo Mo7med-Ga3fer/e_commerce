@@ -14,11 +14,16 @@ class CategoriesListItem extends StatelessWidget {
             radius: 28,
             backgroundImage: AssetImage(img),
           ),
-          const SizedBox(height: 5,),
-          Text(txt, style: const TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w400,
-          ),),
+          const SizedBox(
+            height: 5,
+          ),
+          Text(
+            txt,
+            style: const TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
         ],
       ),
     );
