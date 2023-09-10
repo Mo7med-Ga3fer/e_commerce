@@ -1,53 +1,63 @@
+import 'package:e_commerce/core/utils/app_router.dart';
 import 'package:e_commerce/core/widgets/arrow_back_icon.dart';
 import 'package:e_commerce/feature/home/presentation/views/widgets/category.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ShopByCategoryViewBody extends StatelessWidget {
   const ShopByCategoryViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          ArrowBackIcon(),
-          SizedBox(
+          const ArrowBackIcon(),
+          const SizedBox(
             height: 28,
           ),
-          Text(
+          const Text(
             'Shop by Categories',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.w700,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Category(
-            txt: 'Hoodies',
-            img: 'assets/images/hoodies.png',
+             txt: "Men's Clothing",
+             img: 'assets/images/hoodies.png',
+             onTap: (){
+              GoRouter.of(context).pushReplacement('/${AppRouter.kCategoryProductsView}', extra: "men's clothing");
+             },
           ),
           Category(
-            txt: 'Accessories',
-            img: 'assets/images/accessories.png',
+             txt: "Women's Clothing",
+             img: 'assets/images/woman.webp',
+             onTap: (){
+              GoRouter.of(context).pushReplacement('/${AppRouter.kCategoryProductsView}', extra: "women's clothing");
+             },
           ),
           Category(
-            txt: 'Shorts',
-            img: 'assets/images/shorts.png',
+             txt: "Jewelries",
+             img: 'assets/images/jewelry.webp',
+             onTap: (){
+              GoRouter.of(context).pushReplacement('/${AppRouter.kCategoryProductsView}', extra: "jewelery");
+             },
           ),
           Category(
-            txt: 'Shoes',
-            img: 'assets/images/shoes.png',
-          ),
-          Category(
-            txt: 'Bags',
-            img: 'assets/images/bags.png',
+             txt: "Electronics",
+             img: 'assets/images/electronics.jpg',
+             onTap: (){
+              GoRouter.of(context).pushReplacement('/${AppRouter.kCategoryProductsView}', extra: "electronics");
+             },
           ),
         ],
       ),

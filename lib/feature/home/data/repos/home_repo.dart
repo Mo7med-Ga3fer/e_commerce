@@ -5,4 +5,5 @@ import 'package:e_commerce/feature/home/data/models/product_model/product_model.
 abstract class HomeRepo
 {
   Future<Either<Failure, List<ProductModel>>> fetchProducts();
+  Future<Either<Failure, List<ProductModel>>> fetchCategoryProducts({required String category});
 }

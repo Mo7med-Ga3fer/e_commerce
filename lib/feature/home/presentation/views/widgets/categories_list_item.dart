@@ -7,24 +7,29 @@ class CategoriesListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 14),
-      child: Column(
-        children: [
-          CircleAvatar(
-            radius: 28,
-            backgroundImage: AssetImage(img),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          Text(
-            txt,
-            style: const TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
+      padding: const EdgeInsets.only(right: 38),
+      child: Container(
+        constraints: const BoxConstraints(
+          maxWidth: 60
+        ),
+        child: Column(
+          children: [
+            CircleAvatar(
+              radius: 28,
+              backgroundImage: AssetImage(img),
             ),
-          ),
-        ],
+            const SizedBox(
+              height: 5,
+            ),
+            Text(
+              txt,
+              style: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

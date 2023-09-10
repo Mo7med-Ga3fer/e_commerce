@@ -7,30 +7,26 @@ class CategoriesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80,
+      height: 90,
       width: double.infinity,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: const [
           CategoriesListItem(
-            txt: 'Hoodies',
+            txt: "Men's Clothing",
             img: 'assets/images/hoodies.png',
           ),
           CategoriesListItem(
-            txt: 'Shorts',
-            img: 'assets/images/shorts.png',
+            txt: "Women's Clothing",
+            img: 'assets/images/woman.webp',
           ),
           CategoriesListItem(
-            txt: 'Shoes',
-            img: 'assets/images/shoes.png',
+            txt: 'Jewelery',
+            img: 'assets/images/jewelry.webp',
           ),
           CategoriesListItem(
-            txt: 'Bags',
-            img: 'assets/images/bags.png',
-          ),
-          CategoriesListItem(
-            txt: 'Accessories',
-            img: 'assets/images/accessories.png',
+            txt: 'Electronics',
+            img: 'assets/images/electronics.jpg',
           ),
         ],
       ),
