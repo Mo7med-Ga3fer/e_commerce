@@ -37,7 +37,7 @@ class HomeViewBody extends StatelessWidget {
                   SectionTitle(
                     title: 'Categories',
                     onTap: () {
-                      GoRouter.of(context).pushReplacement('/${AppRouter.kCategoriessListView}');
+                      GoRouter.of(context).push('/${AppRouter.kCategoriessListView}');
                     },
                     ),
                   const SizedBox(

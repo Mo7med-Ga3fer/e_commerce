@@ -35,28 +35,28 @@ class ShopByCategoryViewBody extends StatelessWidget {
              txt: "Men's Clothing",
              img: 'assets/images/hoodies.png',
              onTap: (){
-              GoRouter.of(context).pushReplacement('/${AppRouter.kCategoryProductsView}', extra: "men's clothing");
+              GoRouter.of(context).push('/${AppRouter.kCategoryProductsView}', extra: "men's clothing");
              },
           ),
           Category(
              txt: "Women's Clothing",
              img: 'assets/images/woman.webp',
              onTap: (){
-              GoRouter.of(context).pushReplacement('/${AppRouter.kCategoryProductsView}', extra: "women's clothing");
+              GoRouter.of(context).push('/${AppRouter.kCategoryProductsView}', extra: "women's clothing");
              },
           ),
           Category(
              txt: "Jewelries",
              img: 'assets/images/jewelry.webp',
              onTap: (){
-              GoRouter.of(context).pushReplacement('/${AppRouter.kCategoryProductsView}', extra: "jewelery");
+              GoRouter.of(context).push('/${AppRouter.kCategoryProductsView}', extra: "jewelery");
              },
           ),
           Category(
              txt: "Electronics",
              img: 'assets/images/electronics.jpg',
              onTap: (){
-              GoRouter.of(context).pushReplacement('/${AppRouter.kCategoryProductsView}', extra: "electronics");
+              GoRouter.of(context).push('/${AppRouter.kCategoryProductsView}', extra: "electronics");
              },
           ),
         ],
